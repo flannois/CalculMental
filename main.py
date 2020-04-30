@@ -107,7 +107,7 @@ class Fenetre(BoxLayout):
             self.labelnb1.text = str("")
             self.labeloperant.text = str("Perdu")
             self.labelnb2.text = str("")
-            self.labelnombre.text = str("Ton score : {}".format(self.score))
+            self.labelnombre.text = str("Ton score\n{}".format(self.score))
         
 
 
