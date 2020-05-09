@@ -15,8 +15,8 @@ class Fenetre(BoxLayout):
 
     def creationCalcul(self):
         print("creation calcul")
-        self.nb1 = randint(0,10)
-        self.nb2 = randint(0,10)
+        self.nb1 = randint(1,12)
+        self.nb2 = randint(1,12)
         operant = randint(1,4)
         if operant == 1:
             self.operant = "+"
