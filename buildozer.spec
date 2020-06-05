@@ -7,7 +7,7 @@ title = Calcul Mental
 package.name = CMapp
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = lannois.com
 
 # (str) Source code where the main.py live
 source.dir = .
