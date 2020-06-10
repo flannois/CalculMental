@@ -14,9 +14,8 @@ class Fenetre(BoxLayout):
         self.creationCalcul()
 
     def creationCalcul(self):
-        print("creation calcul")
-        self.nb1 = randint(1,12)
-        self.nb2 = randint(1,12)
+        self.nb1 = randint(1,9)
+        self.nb2 = randint(1,9)
         operant = randint(1,4)
         if operant == 1:
             self.operant = "+"
@@ -32,57 +31,45 @@ class Fenetre(BoxLayout):
             self.soustraction()
 
     def addition(self):
-        print("addition")
         self.resultat = self.nb1 + self.nb2
 
     def multiplication(self):
-        print("multiplication")
         self.resultat = self.nb1 * self.nb2
 
     def division(self):
-        print("division")
         self.multiplication()
         self.nb1,self.resultat = self.resultat,self.nb1
 
     def soustraction(self):
-        print("soustraction")
         self.addition()
         self.nb1,self.resultat = self.resultat,self.nb1
            
 
     def chiffreRentre(self,chiffre):
-        print("chiffreRentre")    
         bouton = str(chiffre)
         self.nombre += bouton
         self.affichage()
-        print(self.nombre)
            
     def valider(self):
-        print("valider")
         self.verification()
         self.nombre = ""
         self.affichage()
         
     def corriger(self):
-        print("corriger")
         self.nombre = ""
         self.affichage()
 
     def verification(self):
-        print("verification")
-        print(self.nombre,self.resultat)
         if str(self.nombre) == str(self.resultat):
             self.gagne()
         else:
             self.perdu()
 
     def gagne(self):
-        print("gagne")
         self.score += 1
         self.creationCalcul()
         
     def perdu(self):
-        print("perdu")
         self.vie -= 1
         if self.vie > 0:
             self.creationCalcul()
@@ -90,7 +77,6 @@ class Fenetre(BoxLayout):
     
     def affichage(self):
         if self.vie > 0:
-            print("affichage")
             self.labelvie.text = "Vies : {}".format(self.vie)
             self.labelscore.text = "Score : {}".format(self.score)
 
@@ -101,7 +87,6 @@ class Fenetre(BoxLayout):
     
         else:
             self.vie = 0
-            print("finDuJeu")
             self.labelvie.text = "Vies : {}".format(self.vie)
             self.labelscore.text = "Score : {}".format(self.score)
             self.labelnb1.text = str("")
