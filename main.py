@@ -15,8 +15,8 @@ class Fenetre(BoxLayout):
         self.creationCalcul()
 
     def creationCalcul(self):
-        self.nb1 = randint(1,9)
-        self.nb2 = randint(1,9)
+        self.nb1 = randint(0,10)
+        self.nb2 = randint(0,10)
         operant = randint(1,4)
         if operant == 1:
             self.operant = "+"
@@ -52,9 +52,11 @@ class Fenetre(BoxLayout):
         self.affichage()
            
     def valider(self):
-        self.verification()
-        self.nombre = ""
-        self.affichage()
+        if self.nombre != "":
+            self.verification()
+            self.nombre = ""
+            self.affichage()
+            
         
     def corriger(self):
         self.nombre = ""
@@ -100,8 +102,13 @@ class Fenetre(BoxLayout):
         
 
 
-    def quitter(self):
-        sys.exit()   
+    def rejouer(self):
+        self.nombre = ""
+        self.labelprecedent.text = ""
+        self.score = 0
+        self.vie = 5
+        self.creationCalcul() 
+        self.affichage()
 
 class CalculMentalApp(App):
     def build(self):
