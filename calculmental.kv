@@ -5,6 +5,7 @@ Fenetre:
     labelnb2:affichagenb2
     labeloperant:affichagoperant
     labelnombre:affichagenombre
+    labelprecedent:affichageprecedent
     BoxLayout:
         orientation: "vertical"
         
@@ -38,8 +39,13 @@ Fenetre:
         BoxLayout:
             Label:
                 font_size: cm(1.2)
+                id:affichageprecedent
+                text:""  
+        BoxLayout:
+            Label:
+                font_size: cm(1.2)
                 id:affichagenombre
-                text:"Appuie sur\n corriger"    
+                text:"Appuie sur\n  corriger"    
         GridLayout:
             id: "clavier"
             padding:10

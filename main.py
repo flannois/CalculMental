@@ -9,6 +9,7 @@ class Fenetre(BoxLayout):
     def __init__(self,**kwargs):
         super(Fenetre,self).__init__(**kwargs)
         self.nombre = ""
+        
         self.score = 0
         self.vie = 5
         self.creationCalcul()
@@ -66,10 +67,12 @@ class Fenetre(BoxLayout):
             self.perdu()
 
     def gagne(self):
+        self.labelprecedent.text = "BRAVO +1 point"
         self.score += 1
         self.creationCalcul()
         
     def perdu(self):
+        self.labelprecedent.text = "perdu c'était {}".format(self.resultat)
         self.vie -= 1
         if self.vie > 0:
             self.creationCalcul()
@@ -85,6 +88,7 @@ class Fenetre(BoxLayout):
             self.labelnb2.text = str(self.nb2)
             self.labelnombre.text = str(self.nombre)
     
+            
         else:
             self.vie = 0
             self.labelvie.text = "Vies : {}".format(self.vie)
