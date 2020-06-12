@@ -9,14 +9,16 @@ class Fenetre(BoxLayout):
     def __init__(self,**kwargs):
         super(Fenetre,self).__init__(**kwargs)
         self.nombre = ""
-        
+        self.lancement = True
         self.score = 0
         self.vie = 5
         self.creationCalcul()
+        
 
     def creationCalcul(self):
-        self.nb1 = randint(0,10)
-        self.nb2 = randint(0,10)
+        
+        self.nb1 = randint(0,11)
+        self.nb2 = randint(0,11)
         operant = randint(1,4)
         if operant == 1:
             self.operant = "+"
@@ -30,6 +32,7 @@ class Fenetre(BoxLayout):
         elif operant == 4:
             self.operant = "-"
             self.soustraction()
+
 
     def addition(self):
         self.resultat = self.nb1 + self.nb2
@@ -69,12 +72,12 @@ class Fenetre(BoxLayout):
             self.perdu()
 
     def gagne(self):
-        self.labelprecedent.text = "BRAVO +1 point"
+        self.labelprecedent.text = ""
         self.score += 1
         self.creationCalcul()
         
     def perdu(self):
-        self.labelprecedent.text = "perdu c'était {}".format(self.resultat)
+        self.labelprecedent.text = "C'était {}".format(self.resultat)
         self.vie -= 1
         if self.vie > 0:
             self.creationCalcul()
