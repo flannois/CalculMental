@@ -50,8 +50,9 @@ class Fenetre(BoxLayout):
            
 
     def chiffreRentre(self,chiffre):
-        bouton = str(chiffre)
-        self.nombre += bouton
+        self.labelprecedent.text = ""
+        
+        self.nombre += str(chiffre)
         self.affichage()
            
     def valider(self):
@@ -62,6 +63,7 @@ class Fenetre(BoxLayout):
             
         
     def corriger(self):
+        self.labelprecedent.text = ""
         self.nombre = ""
         self.affichage()
 
