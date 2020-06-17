@@ -4,7 +4,7 @@
 title = Calcul Mental
 
 # (str) Package name
-package.name = CMapp
+package.name = CalculMental
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = lannois.com
@@ -28,7 +28,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.3
+version = 0.1
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
