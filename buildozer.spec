@@ -91,7 +91,7 @@ fullscreen = 0
 android.api = 30
 
 # (int) Minimum API your APK will support.
-android.minapi = 26
+android.minapi = 23
 
 # (int) Android SDK version to use
 #android.sdk = 20
