@@ -1,4 +1,3 @@
-import sys
 from random import randint
 
 from kivy.app import App
