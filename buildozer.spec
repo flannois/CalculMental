@@ -28,7 +28,7 @@ source.exclude_dirs = tests, bin
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.5
+version = 0.6
 
 
 # (str) Application versioning (method 2)
@@ -220,7 +220,7 @@ android.add_libs_mips = libs/android-mips/*.so
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = arm64-v8a
+android.arch = x86_64
 
 #
 # Python for android (p4a) specific
