@@ -1,4 +1,4 @@
 v0.7 -> icone d'appli sexy + description d'appli propre dans le playstore
 v0.8 -> scale du texte par rapport au résolution des tél
 v0.9 -> quand tu perds tu affiche la bonne réponse, c'est bien
-mais en meme temps le prochain calcul, on pourrait s'y perdre
+	mais en meme temps le prochain calcul, on pourrait s'y perdre
