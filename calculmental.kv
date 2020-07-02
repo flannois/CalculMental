@@ -25,27 +25,29 @@ Fenetre:
                 on_press:root.rejouer()
         BoxLayout:
             Label:
-                font_size: cm(1.4)
+                font_size: self.width/2
                 id:affichagenb1
                 text:""
             Label:
-                font_size: cm(1.4)
+                font_size: self.width/2
                 id:affichagoperant
                 text:""
             Label:
-                font_size: cm(1.4)
+                font_size: self.width/2
                 id:affichagenb2
                 text:""
         BoxLayout:
             Label:
-                font_size: cm(1.2)
+                color: 1,0,0,1
+                font_size: self.width/5
                 id:affichageprecedent
                 text:""  
         BoxLayout:
             Label:
-                font_size: cm(1.2)
+                
+                font_size: self.width/8
                 id:affichagenombre
-                text:"    Appuyer sur un bouton \npour lancer"    
+                text:"Appui\nBouton"    
         GridLayout:
             id: "clavier"
             padding:10

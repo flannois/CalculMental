@@ -78,7 +78,8 @@ class Fenetre(BoxLayout):
         self.creationCalcul()
         
     def perdu(self):
-        self.labelprecedent.text = "C'était {}".format(self.resultat)
+        self.ancienCalcul = "{}{}{}".format(self.nb1,self.operant,self.nb2)
+        self.labelprecedent.text = "{} = {}".format(self.ancienCalcul,self.resultat)
         self.vie -= 1
         if self.vie > 0:
             self.creationCalcul()
