@@ -23,7 +23,7 @@ class Fenetre(BoxLayout):
             self.operant = "+"
             self.addition()
         elif operant == 2:
-            self.operant = "X"
+            self.operant = "x"
             self.multiplication()
         elif operant == 3:
             self.operant = ":"
