@@ -1,3 +1,0 @@
-title=CalculMental
-author=flannois
-orientation=portrait
