@@ -1,2 +1,0 @@
-set solib-search-path /home/kaox/calculmental/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_24/sqlite3/obj/local/armeabi-v7a
-directory /home/kaox/.buildozer/android/platform/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot /home/kaox/calculmental/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_24/sqlite3/jni/.. /home/kaox/.buildozer/android/platform/android-ndk-r19c/sources/cxx-stl/system
