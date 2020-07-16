@@ -1,4 +1,10 @@
-Fenetre:
+GestionnaireFenetre:
+    BoutonJouer:
+    FenetreJeu:
+    FenetreOptions:
+
+<FenetreJeu>:
+    name:"FenetreJeu"
     labelvie:affichagevie
     labelscore:affichagescore
     labelnb1:affichagenb1
@@ -21,8 +27,10 @@ Fenetre:
                 text:"Score : 0"
             Button:
                 size_hint_x:0.3
-                text:"Rejouer"
-                on_press:root.rejouer()
+                text:"Options"
+                on_press:
+                    app.root.current = "FenetreOptions"
+                    root.manager.transition.direction = "left"
         BoxLayout:
             Label:
                 font_size: self.width/2
@@ -47,61 +55,83 @@ Fenetre:
                 
                 font_size: self.width/8
                 id:affichagenombre
-                text:"D"    
+                text:""    
         GridLayout:
             id: "clavier"
             padding:10
             cols: 3
             
             Button:
-
                 text:"1"
-                on_press: root.chiffreRentre(1)
-                
-                background_normal: "Images/1.png"
-                
+                on_press: app.chiffreRentre(1)
+       
             Button:
                 text:"2"
-                on_press: root.chiffreRentre(2)
+                on_press: app.chiffreRentre(2)
             
             Button:
                 text:"3"
-                on_press: root.chiffreRentre(3)
+                on_press: app.chiffreRentre(3)
             
             Button:
                 text:"4"
-                on_press: root.chiffreRentre(4)
+                on_press: app.chiffreRentre(4)
             
             Button:
                 text:"5"
-                on_press: root.chiffreRentre(5)
+                on_press: app.chiffreRentre(5)
             
             Button:
                 text:"6"
-                on_press: root.chiffreRentre(6)
+                on_press: app.chiffreRentre(6)
             
             Button:
                 text:"7"
-                on_press: root.chiffreRentre(7)
+                on_press: app.chiffreRentre(7)
             
             Button:
                 text:"8"
-                on_press: root.chiffreRentre(8)
+                on_press: app.chiffreRentre(8)
             
             Button:
                 text:"9"
-                on_press: root.chiffreRentre(9)
+                on_press: app.chiffreRentre(9)
             
             Button:
                 text:"Corriger"
                 background_color: (1, 0.1, 0.1, 1)
-                on_press: root.corriger()
+                on_press: app.corriger()
             
             Button:
                 text:"0"
-                on_press: root.chiffreRentre(0)
+                on_press: app.chiffreRentre(0)
             
             Button:
                 text:"Valider"
                 background_color: (0.1, 1, 0.1, 1)
-                on_press: root.valider()
+                on_press: app.valider()
+
+<BoutonJouer>:
+    name:"Accueil"
+    BoxLayout:
+        orientation:"vertical"
+        Label:
+            text:"Salut !"
+        Button:
+            text:"JOUER"
+            on_press:
+                
+                app.root.current = "FenetreJeu"
+                root.manager.transition.direction = "up"
+
+<FenetreOptions>:
+    name:"FenetreOptions"
+    BoxLayout:
+        orientation:"vertical"
+        Label:
+            text:"OPTIONS"
+        Button:
+            text:"Retour"
+            on_press:
+                app.root.current = "FenetreJeu"
+                root.manager.transition.direction = "right"
