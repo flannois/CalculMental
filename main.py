@@ -26,7 +26,7 @@ class CalculMentalApp(App):
         self.score = 0
         self.vie = 5
         self.creationCalcul()
-        self.chiffreRentre("")
+        
     
     def __init__(self,**kwargs):
         self.nombre = ""
@@ -66,14 +66,14 @@ class CalculMentalApp(App):
     def soustraction(self):
         self.addition()
         self.nb1,self.resultat = self.resultat,self.nb1
-          
+         
     def chiffreRentre(self,chiffre):
         print("DEF : chiffreRentre = {}".format(chiffre))
     
         self.labelprecedent.text = ""
         self.nombre += str(chiffre)
         self.affichage()
-           
+          
     def valider(self):
         if self.nombre != "":
             self.verification()
@@ -120,7 +120,7 @@ class CalculMentalApp(App):
             self.labeloperant.text = str("Perdu")
             self.labelnb2.text = str("")
             self.labelnombre.text = str("Score : {}".format(self.score))
-        
+    """   
 
     def rejouer(self):
         self.nombre = ""
@@ -129,6 +129,6 @@ class CalculMentalApp(App):
         self.vie = 5
         self.creationCalcul() 
         self.affichage()
-    """
+    
 if __name__ == "__main__":
     CalculMentalApp().run()

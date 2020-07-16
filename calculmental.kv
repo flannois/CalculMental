@@ -3,6 +3,52 @@ GestionnaireFenetre:
     FenetreJeu:
     FenetreOptions:
 
+<BoutonJouer>:
+    name:"Accueil"
+    BoxLayout:
+        orientation:"vertical"
+        Label:
+            text:"Salut !"
+        Button:
+            text:"JOUER"
+            on_press:
+                
+                app.root.current = "FenetreJeu"
+                root.manager.transition.direction = "up"
+
+<FenetreOptions>:
+    name:"FenetreOptions"
+    BoxLayout:
+        orientation:"vertical"
+        
+        Label:
+            text:"--OPTIONS--"
+        BoxLayout:        
+            Label:
+                text:"OPTIONS 1"
+            Switch:
+        BoxLayout:
+            Label:
+                text:"OPTIONS 2"
+            Switch:
+        BoxLayout:
+            Label:
+                text:"OPTIONS 3"
+            Switch:
+        BoxLayout:
+            Label:
+                text:"OPTIONS 4"
+            CheckBox:
+        Button:
+
+            text:"Valider"
+        
+        Button:
+            text:"Retour"
+            on_press:
+                app.root.current = "FenetreJeu"
+                root.manager.transition.direction = "right"
+
 <FenetreJeu>:
     name:"FenetreJeu"
     labelvie:affichagevie
@@ -16,7 +62,7 @@ GestionnaireFenetre:
         orientation: "vertical"
         
         BoxLayout:
-            size_hint_y:0.15
+            size_hint_y:0.25
             Label:
                 size_hint_x:0.3
                 id:affichagevie
@@ -111,27 +157,4 @@ GestionnaireFenetre:
                 background_color: (0.1, 1, 0.1, 1)
                 on_press: app.valider()
 
-<BoutonJouer>:
-    name:"Accueil"
-    BoxLayout:
-        orientation:"vertical"
-        Label:
-            text:"Salut !"
-        Button:
-            text:"JOUER"
-            on_press:
-                
-                app.root.current = "FenetreJeu"
-                root.manager.transition.direction = "up"
 
-<FenetreOptions>:
-    name:"FenetreOptions"
-    BoxLayout:
-        orientation:"vertical"
-        Label:
-            text:"OPTIONS"
-        Button:
-            text:"Retour"
-            on_press:
-                app.root.current = "FenetreJeu"
-                root.manager.transition.direction = "right"
