@@ -27,7 +27,6 @@ class CalculMentalApp(App):
         self.vie = 5
         self.creationCalcul()
         
-    
     def __init__(self,**kwargs):
         self.nombre = ""
         self.lancement = True
@@ -69,7 +68,6 @@ class CalculMentalApp(App):
          
     def chiffreRentre(self,chiffre):
         print("DEF : chiffreRentre = {}".format(chiffre))
-    
         self.labelprecedent.text = ""
         self.nombre += str(chiffre)
         self.affichage()
