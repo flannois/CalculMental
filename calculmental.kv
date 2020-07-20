@@ -1,9 +1,25 @@
+
+
+
 GestionnaireFenetre:
     BoutonJouer:
     FenetreJeu:
+        labelvie:affichagevie
+        labelscore:affichagescore
+        labelnb1:affichagenb1
+        labelnb2:affichagenb2
+        labeloperant:affichagoperant
+        labelnombre:Affichagenombre
+        labelprecedent:affichageprecedent
     FenetreOptions:
 
+
+
+
+
 <BoutonJouer>:
+
+
     name:"Accueil"
     BoxLayout:
         orientation:"vertical"
@@ -12,6 +28,7 @@ GestionnaireFenetre:
         Button:
             text:"JOUER"
             on_press:
+                app.creationCalcul()
                 app.root.current = "FenetreJeu"
                 root.manager.transition.direction = "up"
 
@@ -39,9 +56,10 @@ GestionnaireFenetre:
                 text:"OPTIONS 4"
             CheckBox:
         Button:
+            text:"Rejouer"
+            on_press:app.rejouer()
 
-            text:"Valider"
-        
+
         Button:
             text:"Retour"
             on_press:
@@ -50,13 +68,7 @@ GestionnaireFenetre:
 
 <FenetreJeu>:
     name:"FenetreJeu"
-    labelvie:affichagevie
-    labelscore:affichagescore
-    labelnb1:affichagenb1
-    labelnb2:affichagenb2
-    labeloperant:affichagoperant
-    labelnombre:affichagenombre
-    labelprecedent:affichageprecedent
+
     BoxLayout:
         orientation: "vertical"
         
@@ -155,5 +167,4 @@ GestionnaireFenetre:
                 text:"Valider"
                 background_color: (0.1, 1, 0.1, 1)
                 on_press: app.valider()
-
 
