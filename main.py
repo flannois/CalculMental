@@ -1,33 +1,21 @@
 from random import randint
+
 from kivy.app import App
+from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.screenmanager import ScreenManager, Screen
 
-
-class BoutonJouer(Screen):
-    pass
-
-class FenetreJeu(Screen):
-    pass
-
-class FenetreOptions(Screen):
-    pass
-
-class GestionnaireFenetre(ScreenManager):
-    pass
-
-class CalculMentalApp(App):
-
-    def build(self):
-        print("def build(self):")
+class Fenetre(BoxLayout):
+    def __init__(self,**kwargs):
+        super(Fenetre,self).__init__(**kwargs)
         self.nombre = ""
         self.lancement = True
         self.score = 0
         self.vie = 5
         self.creationCalcul()
-     
+        
+
     def creationCalcul(self):
-        print("def creationCalcul(self):")
+        
         self.nb1 = randint(1,11)
         self.nb2 = randint(1,11)
         operant = randint(1,4)
@@ -43,7 +31,8 @@ class CalculMentalApp(App):
         elif operant == 4:
             self.operant = "-"
             self.soustraction()
-    
+
+
     def addition(self):
         self.resultat = self.nb1 + self.nb2
 
@@ -57,25 +46,26 @@ class CalculMentalApp(App):
     def soustraction(self):
         self.addition()
         self.nb1,self.resultat = self.resultat,self.nb1
-         
+           
+
     def chiffreRentre(self,chiffre):
-        print("DEF : chiffreRentre = {}".format(chiffre))
-        #self.labelprecedent.text = ""
+        self.labelprecedent.text = ""
+        
         self.nombre += str(chiffre)
         self.affichage()
-          
+           
     def valider(self):
         if self.nombre != "":
             self.verification()
             self.nombre = ""
             self.affichage()
+            
         
-    
     def corriger(self):
         self.labelprecedent.text = ""
         self.nombre = ""
         self.affichage()
-    
+
     def verification(self):
         if str(self.nombre) == str(self.resultat):
             self.gagne()
@@ -94,14 +84,17 @@ class CalculMentalApp(App):
         if self.vie > 0:
             self.creationCalcul()
         
+    
     def affichage(self):
         if self.vie > 0:
             self.labelvie.text = "Vies : {}".format(self.vie)
             self.labelscore.text = "Score : {}".format(self.score)
+
             self.labelnb1.text = str(self.nb1)
             self.labeloperant.text = str(self.operant)
             self.labelnb2.text = str(self.nb2)
             self.labelnombre.text = str(self.nombre)
+    
             
         else:
             self.vie = 0
@@ -110,8 +103,9 @@ class CalculMentalApp(App):
             self.labelnb1.text = str("")
             self.labeloperant.text = str("Perdu")
             self.labelnb2.text = str("")
-            self.labelnombre.text = str("Score : {}".format(self.score))
-       
+            self.labelnombre.text = str("Ton score\n{}".format(self.score))
+        
+
 
     def rejouer(self):
         self.nombre = ""
@@ -120,6 +114,10 @@ class CalculMentalApp(App):
         self.vie = 5
         self.creationCalcul() 
         self.affichage()
-    
+
+class CalculMentalApp(App):
+    def build(self):
+        self.root = Builder.load_file('calculmental.kv')
+
 if __name__ == "__main__":
     CalculMentalApp().run()
