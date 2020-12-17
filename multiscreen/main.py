@@ -70,7 +70,6 @@ class CalculMentalApp(App):
             self.nombre = ""
             self.affichage()
         
-    
     def corriger(self):
         self.labelprecedent.text = ""
         self.nombre = ""
