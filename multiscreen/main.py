@@ -17,8 +17,7 @@ class GestionnaireFenetre(ScreenManager):
     pass
 
 class CalculMentalApp(App):
-    
-    
+
     def build(self):
         print("def build(self):")
         self.nombre = ""
@@ -26,15 +25,7 @@ class CalculMentalApp(App):
         self.score = 0
         self.vie = 5
         self.creationCalcul()
-        
-    
-    def __init__(self,**kwargs):
-        self.nombre = ""
-        self.lancement = True
-        self.score = 0
-        self.vie = 5
-        self.creationCalcul()
-    
+     
     def creationCalcul(self):
         print("def creationCalcul(self):")
         self.nb1 = randint(1,11)
@@ -52,7 +43,7 @@ class CalculMentalApp(App):
         elif operant == 4:
             self.operant = "-"
             self.soustraction()
-
+    
     def addition(self):
         self.resultat = self.nb1 + self.nb2
 
@@ -69,8 +60,7 @@ class CalculMentalApp(App):
          
     def chiffreRentre(self,chiffre):
         print("DEF : chiffreRentre = {}".format(chiffre))
-    
-        self.labelprecedent.text = ""
+        #self.labelprecedent.text = ""
         self.nombre += str(chiffre)
         self.affichage()
           
@@ -80,11 +70,12 @@ class CalculMentalApp(App):
             self.nombre = ""
             self.affichage()
         
+    
     def corriger(self):
         self.labelprecedent.text = ""
         self.nombre = ""
         self.affichage()
-
+    
     def verification(self):
         if str(self.nombre) == str(self.resultat):
             self.gagne()
@@ -120,7 +111,7 @@ class CalculMentalApp(App):
             self.labeloperant.text = str("Perdu")
             self.labelnb2.text = str("")
             self.labelnombre.text = str("Score : {}".format(self.score))
-      
+       
 
     def rejouer(self):
         self.nombre = ""
